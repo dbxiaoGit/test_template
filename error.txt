@@ -1,0 +1,26 @@
+Error during template rendering
+In template C:\Users\x\IdeaProjects\test_template\templates\test_template.html, error at line 10
+
+default requires 2 arguments, 1 provided
+1	<html lang="en">
+2	<head>
+3	    <title>test_template</title>
+4	    <meta charset="UTF-8">
+5	</head>
+6	<body>
+7	    <h1>test_template</h1>
+8	    <hr/>
+9	    <p>
+10	        default: {{ test_default|default: "nothing"}}
+11	    </p>
+12	    <hr/>
+13	    <p>
+14	        length: {{name_list|length}}
+15	    </p>
+16	    <hr/>
+17	    <p>
+18	        filesizeformat: {{file_size|filesizeformat}}
+19	    </p>
+20	    <hr/>
+
+问题由于模版中default冒号后面有空格导致

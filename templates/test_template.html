@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <title>test_template</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>test_template</h1>
+    <hr/>
+    <p>
+        default: {{ test_default|default:"nothing"}}
+    </p>
+    <hr/>
+    <p>
+        length: {{name_list|length}}
+    </p>
+    <hr/>
+    <p>
+        filesizeformat: {{file_size|filesizeformat}}
+    </p>
+    <hr/>
+    <p>
+        slice:  {{name_list|slice:"2:-1"}}
+    </p>
+    <hr/>
+    <p>
+        date:   {{date|date:"Y-m-d H:i:s"}}
+    </p>
+    <hr/>
+    <p>
+        no safe:   {{script}}
+        <br>
+        safe:   {{script|safe}}
+    </p>
+    <hr/>
+    <p>
+        truncatechars:  {{script|truncatechars:10}}
+    </p>
+    <hr/>
+    <p>
+        {% load myfilter %}
+        自定义filter
+        <br>
+        {{name_list.0|add_str:"是个sb"}}
+        <br>
+        {{name_list.1|add_diy_str}}
+    </p>
+    <hr/>
+    <p>
+    非空<br>
+        <ul>
+            {% for user in name_list %}
+                {% if forloop.first %}
+                    <li>{{ user }} first {{forloop.counter}}</li>
+                {% elif forloop.last %}
+                    <li>{{ user }} last {{forloop.counter}}</li>
+                {% else %}
+                    <li>{{ user }} {{forloop.counter}}</li>
+                {% endif %}
+                {% empty %}
+                 <li>空空如也</li>
+            {% endfor %}
+        </ul>
+    </p>
+    <hr/>
+    <p>
+    空<br>
+        <ul>
+            {% for user in name_list_empty %}
+                {% if forloop.first %}
+                    <li>{{ user }} first {{forloop.counter}}</li>
+                {% elif forloop.last %}
+                    <li>{{ user }} last {{forloop.counter}}</li>
+                {% else %}
+                    <li>{{ user }} {{forloop.counter}}</li>
+                {% endif %}
+                {% empty %}
+                 <li>空空如也</li>
+            {% endfor %}
+        </ul>
+    </p>
+
+</body>
+</html>
