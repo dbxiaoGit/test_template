@@ -209,3 +209,4 @@ Traceback (most recent call last):
   File "C:\Users\x\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 668, in __init__
     "from '%s'" % (token[upto:], token))
 django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% else %' from '% else %'
+[2018-06-24 23:32:23,118][Thread-1:5140][task_id:django.request][base.py:93][WARNING][Not Found: /]
